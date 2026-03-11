@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --uv-0: #06010c;
+  --uv-1: #0b0216;
+  --uv-2: #120429;
+  --glass: rgba(255, 255, 255, 0.08);
+  --glass-2: rgba(255, 255, 255, 0.12);
+  --stroke: rgba(255, 255, 255, 0.16);
+  --stroke-2: rgba(255, 255, 255, 0.24);
+  --text: rgba(255, 255, 255, 0.92);
+  --muted: rgba(255, 255, 255, 0.72);
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Inter Variable, Inter, system-ui, sans-serif;
+  background: radial-gradient(1200px 800px at 50% 0%, var(--uv-2), var(--uv-0));
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+.glass {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.10),
+    rgba(255, 255, 255, 0.06)
+  );
+  border: 1px solid var(--stroke);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
+
+.glass-strong {
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.14),
+    rgba(255, 255, 255, 0.08)
+  );
+  border: 1px solid var(--stroke-2);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.42);
+}
+
+.glass-text {
+  color: transparent;
+  background: linear-gradient(
+          120deg,
+          rgba(255,255,255,0.95),
+          rgba(220,200,255,0.60),
+          rgba(255,255,255,0.85)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  text-shadow:
+          0 0 18px rgba(180,120,255,0.22),
+          0 0 2px rgba(255,255,255,0.18);
+}
