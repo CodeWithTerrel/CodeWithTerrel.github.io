@@ -21,7 +21,12 @@ export const projects = [
             "PWA",
             "Cloudflare Pages",
         ],
-        images: [],
+        images: [
+            {
+                src: `${import.meta.env.BASE_URL}images/aldo/Aldo-management-system.PNG`,
+                alt: "ALDO Management System dashboard",
+            },
+        ],
     },
     {
         id: "caremap",
@@ -77,7 +82,12 @@ export const projects = [
             "Dell OptiPlex",
             "Virtualization",
         ],
-        images: [],
+        images: [
+            {
+                src: `${import.meta.env.BASE_URL}images/homelab/home-lab.png`,
+                alt: "My home lab setup",
+            },
+        ],
     },
     {
         id: "aitutor",
@@ -102,7 +112,36 @@ export const projects = [
             "Ollama",
             "SQLite",
         ],
-        images: [],
+        images: [
+            {
+                src: `${import.meta.env.BASE_URL}images/ai-tutor/Ai-Tutor_Instructor-side.png`,
+                alt: "AI Tutor instructor dashboard",
+            },
+            {
+                src: `${import.meta.env.BASE_URL}images/ai-tutor/Ai-Tutor_Instructor-side_Queue.png`,
+                alt: "Instructor content generation queue",
+            },
+            {
+                src: `${import.meta.env.BASE_URL}images/ai-tutor/Ai-Tutor_Summary.png`,
+                alt: "AI-generated summary",
+            },
+            {
+                src: `${import.meta.env.BASE_URL}images/ai-tutor/Ai-Tutor_Study-Guide.png`,
+                alt: "AI-generated study guide",
+            },
+            {
+                src: `${import.meta.env.BASE_URL}images/ai-tutor/Ai-Tutor_Flashcards.png`,
+                alt: "Study flashcards",
+            },
+            {
+                src: `${import.meta.env.BASE_URL}images/ai-tutor/Ai-Tutor_Quiz.png`,
+                alt: "Practice quiz",
+            },
+            {
+                src: `${import.meta.env.BASE_URL}images/ai-tutor/Ai-Tutor_Chat.png`,
+                alt: "AI Tutor chat",
+            },
+        ],
     },
     {
         id: "gamehub",
@@ -119,6 +158,43 @@ export const projects = [
             "Cypress",
             "Bootstrap",
         ],
-        images: [],
+        images: [
+            {
+                src: `${import.meta.env.BASE_URL}images/game-hub/Game-Hub_Landing-Page.png`,
+                alt: "Game Hub landing page",
+            },
+            {
+                src: `${import.meta.env.BASE_URL}images/game-hub/Game-Hub_Login-Page.png`,
+                alt: "Game Hub login",
+            },
+            {
+                src: `${import.meta.env.BASE_URL}images/game-hub/Game-Hub_Registration-Page.png`,
+                alt: "Account registration",
+            },
+            {
+                src: `${import.meta.env.BASE_URL}images/game-hub/Game-Hub_Account-Settings-Page.png`,
+                alt: "Account settings",
+            },
+            {
+                src: `${import.meta.env.BASE_URL}images/game-hub/Game-Hub_Stats-Page.png`,
+                alt: "Player statistics",
+            },
+            {
+                src: `${import.meta.env.BASE_URL}images/game-hub/Game-Hub_Store-Page.png`,
+                alt: "Game Hub store",
+            },
+            {
+                src: `${import.meta.env.BASE_URL}images/game-hub/Game-Hub_Twenty-Total.png`,
+                alt: "Twenty Total game",
+            },
+            {
+                src: `${import.meta.env.BASE_URL}images/game-hub/Game-Hub_Memory-Match_Win.gif`,
+                alt: "Memory Match winning gameplay",
+            },
+            {
+                src: `${import.meta.env.BASE_URL}images/game-hub/Game-Hub_Memory-Match_Loss.gif`,
+                alt: "Memory Match losing gameplay",
+            },
+        ],
     },
 ];
