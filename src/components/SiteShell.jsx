@@ -6,6 +6,7 @@ import Skills from "./sections/Skills.jsx";
 import Projects from "./sections/Projects.jsx";
 import Contact from "./sections/Contact.jsx";
 import Divider from "./Divider.jsx";
+import Experience from "./sections/Experience.jsx";
 
 export default function SiteShell() {
     const shellRef = useRef(null);
@@ -69,8 +70,14 @@ export default function SiteShell() {
 
                 <Divider />
 
+                <section id="experience" className="py-16 scroll-mt-24">
+                    <Experience/>
+                </section>
+
+                <Divider/>
+
                 <section id="contact" className="py-16 scroll-mt-24">
-                    <Contact />
+                    <Contact/>
                 </section>
             </main>
 
