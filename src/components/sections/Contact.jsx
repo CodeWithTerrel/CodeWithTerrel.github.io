@@ -1,8 +1,8 @@
 import { Github, Linkedin, Mail, Phone } from "lucide-react";
 
 const LINKS = {
-    linkedin: "https://www.linkedin.com/in/terrel-lambo-32646b254/",
-    github: "https://github.com/YOUR_USERNAME",
+    linkedin: "https://www.linkedin.com/in/terrel-lambo-matute-esunge-32646b254/",
+    github: "https://github.com/CodeWithTerrel?tab=repositories",
     gmail: "https://mail.google.com/mail/?view=cm&fs=1&to=terrellambo4@gmail.com",
 };
 
@@ -45,10 +45,13 @@ export default function Contact() {
                 </a>
 
                 {/* Phone: visible on mobile only */}
-                <div className="glass rounded-2xl px-4 py-3 inline-flex items-center gap-2 text-white/85 md:hidden">
+                <a
+                    href={`tel:${PHONE_NUMBER}`}
+                    className="glass rounded-2xl px-4 py-3 inline-flex items-center gap-2 text-white/85 hover:bg-white/10 transition md:hidden"
+                >
                     <Phone size={18} />
-                    <span>{PHONE_NUMBER}</span>
-                </div>
+                    <span>Call me</span>
+                </a>
             </div>
 
             <p className="mt-10 text-sm text-white/60">
