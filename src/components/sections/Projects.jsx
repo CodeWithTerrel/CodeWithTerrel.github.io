@@ -45,12 +45,10 @@ function ProjectDetails({ project, onClose }) {
     const changeImage = (direction) => {
         if (images.length < 2) return;
 
-        setImageIndex((current) => {
-            return (
-                (current + direction + images.length) %
-                images.length
-            );
-        });
+        setImageIndex(
+            (current) =>
+                (current + direction + images.length) % images.length
+        );
     };
 
     useEffect(() => {
@@ -94,8 +92,16 @@ function ProjectDetails({ project, onClose }) {
                 }
             }}
             className="project-dialog rounded-3xl border border-white/20 bg-[#10091c] p-0 text-white shadow-2xl"
+            style={{
+                width: "calc(100% - 2rem)",
+                maxWidth: "75rem",
+                maxHeight: "94dvh",
+                overflowY: "auto",
+                overscrollBehavior: "contain",
+            }}
         >
-            <div className="p-5 sm:p-8">
+            <div className="p-5 sm:p-8 lg:p-10">
+                {/* Header */}
                 <div className="flex items-start justify-between gap-4">
                     <div>
                         <p className="text-sm text-purple-200">
@@ -104,15 +110,15 @@ function ProjectDetails({ project, onClose }) {
 
                         <h3
                             id="project-title"
-                            className="mt-1 text-xl sm:text-2xl font-semibold"
+                            className="mt-1 text-2xl sm:text-3xl font-semibold"
                         >
                             {project.title}
                         </h3>
 
                         {project.status && (
-                            <p className="mt-2 text-sm text-purple-200">
+                            <span className="mt-3 inline-block rounded-full bg-purple-300/10 px-3 py-1 text-sm text-purple-200">
                                 {project.status}
-                            </p>
+                            </span>
                         )}
                     </div>
 
@@ -122,11 +128,11 @@ function ProjectDetails({ project, onClose }) {
                         aria-label="Close project details"
                         className="shrink-0 rounded-xl bg-white/10 p-3 hover:bg-white/20 transition"
                     >
-                        <X size={20} />
+                        <X size={22} />
                     </button>
                 </div>
 
-                {/* Image carousel */}
+                {/* Larger image carousel */}
                 <div
                     className="mt-6"
                     role="region"
@@ -136,19 +142,19 @@ function ProjectDetails({ project, onClose }) {
                     <ProjectImage
                         image={images[imageIndex]}
                         title={project.title}
-                        className="h-56 sm:h-80 w-full rounded-2xl object-contain bg-black/20"
+                        className="h-64 sm:h-[420px] lg:h-[560px] w-full rounded-2xl object-contain bg-black/20"
                     />
 
                     {images.length > 0 && (
-                        <div className="mt-3 flex items-center justify-center gap-4">
+                        <div className="mt-4 flex items-center justify-center gap-4 sm:gap-6">
                             {images.length > 1 && (
                                 <button
                                     type="button"
                                     onClick={() => changeImage(-1)}
                                     aria-label="Previous image"
-                                    className="rounded-xl bg-white/10 p-3 hover:bg-white/20 transition"
+                                    className="shrink-0 rounded-xl bg-white/10 p-3 hover:bg-white/20 transition"
                                 >
-                                    <ChevronLeft size={20} />
+                                    <ChevronLeft size={24} />
                                 </button>
                             )}
 
@@ -168,64 +174,72 @@ function ProjectDetails({ project, onClose }) {
                                     type="button"
                                     onClick={() => changeImage(1)}
                                     aria-label="Next image"
-                                    className="rounded-xl bg-white/10 p-3 hover:bg-white/20 transition"
+                                    className="shrink-0 rounded-xl bg-white/10 p-3 hover:bg-white/20 transition"
                                 >
-                                    <ChevronRight size={20} />
+                                    <ChevronRight size={24} />
                                 </button>
                             )}
                         </div>
                     )}
                 </div>
 
-                <h4 className="mt-6 font-semibold">
-                    About the project
-                </h4>
+                {/* Description */}
+                <div className="mt-8">
+                    <h4 className="text-lg font-semibold">
+                        About the project
+                    </h4>
 
-                <p className="mt-2 text-white/75 leading-relaxed">
-                    {project.description}
-                </p>
+                    <p className="mt-3 text-white/75 leading-relaxed">
+                        {project.description}
+                    </p>
+                </div>
 
+                {/* Features */}
                 {project.features && (
-                    <>
-                        <h4 className="mt-6 font-semibold">
+                    <div className="mt-7">
+                        <h4 className="text-lg font-semibold">
                             {project.featuresTitle || "Key features"}
                         </h4>
 
-                        <ul className="mt-2 list-disc pl-5 space-y-2 text-white/75">
+                        <ul className="mt-3 list-disc pl-5 space-y-2 text-white/75">
                             {project.features.map((feature) => (
                                 <li key={feature}>{feature}</li>
                             ))}
                         </ul>
-                    </>
+                    </div>
                 )}
 
+                {/* Planned additions */}
                 {project.planned && (
-                    <>
-                        <h4 className="mt-6 font-semibold">
+                    <div className="mt-7">
+                        <h4 className="text-lg font-semibold">
                             Planned additions
                         </h4>
 
-                        <ul className="mt-2 list-disc pl-5 space-y-2 text-white/75">
+                        <ul className="mt-3 list-disc pl-5 space-y-2 text-white/75">
                             {project.planned.map((service) => (
                                 <li key={service}>{service}</li>
                             ))}
                         </ul>
-                    </>
+                    </div>
                 )}
 
-                <h4 className="mt-6 font-semibold">
-                    Technologies & Focus
-                </h4>
+                {/* Technologies */}
+                <div className="mt-7">
+                    <h4 className="text-lg font-semibold">
+                        Technologies & Focus
+                    </h4>
 
-                <div className="mt-3 flex flex-wrap gap-2">
-                    {project.tech.map((technology) => (
-                        <span
-                            key={technology}
-                            className="rounded-full bg-white/10 px-3 py-1 text-sm text-white/85"
-                        >
-                            {technology}
-                        </span>
-                    ))}
+                    <div className="mt-3 flex flex-wrap gap-2">
+                        {project.tech.map((technology) => (
+                            <span
+                                key={technology}
+                                className="rounded-full bg-white/10 px-3 py-1 text-sm text-white/85"
+                            >
+                                {technology}
+                            </span>
+                        ))}
+                    </div>
                 </div>
             </div>
         </dialog>,
@@ -254,7 +268,7 @@ export default function Projects() {
                         className="glass rounded-3xl p-5 sm:p-6 flex flex-col border border-white/15 transition-all duration-300 hover:border-white/40"
                     >
                         <ProjectImage
-                            image={project.images[0]}
+                            image={project.images?.[0]}
                             title={project.title}
                             className="h-48 w-full rounded-2xl border border-white/20 object-cover object-top"
                         />
