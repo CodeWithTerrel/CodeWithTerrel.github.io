@@ -68,9 +68,9 @@ body {
 
 .project-dialog {
   width: calc(100% - 2rem);
-  max-width: 48rem;
-  max-height: 88vh;
-  max-height: 88dvh;
+  max-width: 75rem;
+  max-height: 94vh;
+  max-height: 94dvh;
   overflow-y: auto;
   overscroll-behavior: contain;
 }
