@@ -24,22 +24,26 @@ export default function Hero() {
 
                     <div className="mt-5 flex flex-wrap items-center gap-3">
             <span className="glass rounded-2xl px-3 py-2 inline-flex items-center gap-2 text-sm text-white/90">
-              <Code2 size={18} />
+              <Code2 size={18}/>
               Developer
             </span>
-                        <span className="glass rounded-2xl px-3 py-2 inline-flex items-center gap-2 text-sm text-white/90">
-              <Brush size={18} />
+                        <span
+                            className="glass rounded-2xl px-3 py-2 inline-flex items-center gap-2 text-sm text-white/90">
+              <Brush size={18}/>
               Graphic Designer
             </span>
                     </div>
 
-                    <p className="mt-4 text-sm sm:text-[13px] text-white/65 max-w-2xl">
-                        Portfolio website built with React and Tailwind. Glass UI, cosmic atmosphere, and a subtle light-reactive interface.
+                    <p className="mt-4 text-sm sm:text-base text-white/75 max-w-2xl leading-relaxed">
+                        Bilingual Computer Systems Technology graduate combining software
+                        development, practical IT troubleshooting, and graphic design to
+                        build useful, accessible solutions.
                     </p>
                 </div>
 
                 <div className="lg:col-span-4">
-                    <div className="w-full h-[280px] sm:h-[320px] rounded-2xl border border-white/20 bg-white/5 overflow-hidden">
+                    <div
+                        className="w-full h-[280px] sm:h-[320px] rounded-2xl border border-white/20 bg-white/5 overflow-hidden">
                         <img
                             src={profilePic}
                             alt="Terrel Lambo Matute Esunge"
