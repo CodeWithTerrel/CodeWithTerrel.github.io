@@ -18,6 +18,13 @@ const resumeUrl =
 
 const experience = [
     {
+        company: "Self-employed · Saskatoon, SK",
+        role: "Independent IT Consultant",
+        dates: "September 2023 - Present",
+        description:
+            "Provide personalized technical support for individual clients, including computer troubleshooting, software installation, Windows upgrades, and data backups. Help resolve performance issues and explain technical solutions in clear, practical terms.",
+    },
+    {
         company: "Sport Chek",
         role: "Footwear Advisor",
         dates: "October 2025 – Present",
